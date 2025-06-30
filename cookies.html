@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookies Policy | VeinSprout</title>
+    <style>
+        /* Global Styles */
+        :root {
+            --primary-color: #2e7d32;
+            --secondary-color: #81c784;
+            --accent-color: #ffb74d;
+            --light-color: #f1f8e9;
+            --dark-color: #1b5e20;
+            --text-color: #333;
+            --white: #ffffff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 50px;
+            margin-right: 15px;
+        }
+        
+        .logo-text h1 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        .logo-text p {
+            color: var(--dark-color);
+            font-size: 0.9rem;
+            font-style: italic;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+        
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Cookies Policy Content */
+        .cookies-policy {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+        
+        .policy-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .policy-header h1 {
+            font-size: 2.8rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .policy-header p {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .policy-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .policy-section {
+            margin-bottom: 40px;
+        }
+        
+        .policy-section h2 {
+            font-size: 1.8rem;
+            color: var(--dark-color);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--secondary-color);
+        }
+        
+        .policy-point {
+            margin-bottom: 30px;
+        }
+        
+        .policy-point h3 {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        .policy-point p {
+            margin-bottom: 10px;
+        }
+        
+        /* Cookie Settings Dialog */
+        .cookie-consent {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.9);
+            color: white;
+            padding: 20px;
+            z-index: 1000;
+            display: none;
+        }
+        
+        .cookie-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .cookie-text {
+            flex: 1;
+            min-width: 300px;
+            margin-bottom: 15px;
+        }
+        
+        .cookie-text p {
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+        
+        .cookie-text a {
+            color: var(--secondary-color);
+            text-decoration: underline;
+        }
+        
+        .cookie-buttons {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .cookie-btn {
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .cookie-accept {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+        }
+        
+        .cookie-accept:hover {
+            background-color: var(--dark-color);
+        }
+        
+        .cookie-decline {
+            background-color: transparent;
+            color: white;
+            border: 1px solid white;
+        }
+        
+        .cookie-decline:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .cookie-settings {
+            background-color: transparent;
+            color: white;
+            border: 1px solid white;
+        }
+        
+        .cookie-settings:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: var(--white);
+            padding: 60px 0 20px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-logo {
+            margin-bottom: 20px;
+        }
+        
+        .footer-logo h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--white);
+        }
+        
+        .footer-logo p {
+            font-style: italic;
+        }
+        
+        .footer-links h4 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links ul li a {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links ul li a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .footer-contact h4 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+        }
+        
+        .footer-contact p {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .footer-contact i {
+            margin-right: 10px;
+            margin-top: 3px;
+        }
+        
+        .footer-social h4 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--white);
+            font-size: 1.2rem;
+            transition: background-color 0.3s;
+        }
+        
+        .social-icons a:hover {
+            background-color: var(--secondary-color);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .footer-bottom p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 10px 0;
+            }
+            
+            .policy-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .cookie-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+            
+            .cookie-btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .policy-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .policy-section h2 {
+                font-size: 1.5rem;
+            }
+            
+            .policy-point h3 {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="p1.png" alt="VeinSprout Logo">
+                <div class="logo-text">
+                    <h1>VeinSprout</h1>
+                    <p>Tiny veins, mighty beginnings.</p>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                       <li><a href="index.html">Home</a></li>
+                    <li><a href="privacy.html">Privacy</a></li>
+                    <li><a href="terms.html">Terms</a></li>
+                    <li><a href="cookies.html">Cookies</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Cookies Policy Content -->
+    <section class="cookies-policy">
+        <div class="container">
+            <div class="policy-header">
+                <h1>Cookies Policy</h1>
+                <p>Last Updated: June 28, 2023</p>
+            </div>
+            <div class="policy-content">
+                <div class="policy-section">
+                    <h2>Introduction</h2>
+                    <div class="policy-point">
+                        <h3>1. What Are Cookies?</h3>
+                        <p>Cookies are small text files that are placed on your computer or mobile device when you visit a website. They are widely used to make websites work more efficiently, as well as to provide information to the website owners. Cookies allow websites to recognize users and remember their preferences and settings.</p>
+                        <p>At VeinSprout, we use cookies to enhance your browsing experience, analyze site traffic, and personalize content. Cookies help us understand how our site is being used, which pages are most popular, and where we can make improvements. Without cookies, some features of our website may not function properly.</p>
+                    </div>
+                    <div class="policy-point">
+                        <h3>2. Our Use of Cookies</h3>
+                        <p>VeinSprout uses cookies for various purposes to improve your online experience. We use strictly necessary cookies that are essential for the website to function properly. These include cookies that enable you to log into secure areas of our website, use a shopping cart, or make purchases.</p>
+                        <p>We also use performance cookies to collect information about how visitors use our website, such as which pages are visited most often. This helps us improve how our website works. Additionally, we use functionality cookies to recognize you when you return to our website and remember your preferences.</p>
+                    </div>
+                </div>
+
+                <div class="policy-section">
+                    <h2>Types of Cookies We Use</h2>
+                    <div class="policy-point">
+                        <h3>3. Strictly Necessary Cookies</h3>
+                        <p>These cookies are essential for you to browse the website and use its features. Without these cookies, services like shopping baskets and secure logins would not work properly. They are usually set in response to actions made by you such as setting your privacy preferences, logging in, or filling in forms.</p>
+                        <p>Examples include cookies that keep you logged in during your visit, maintain your session security, and ensure consistent display of content. These cookies do not store any personally identifiable information and cannot be disabled in our systems as they are required for basic functionality.</p>
+                    </div>
+                    <div class="policy-point">
+                        <h3>4. Performance Cookies</h3>
+                        <p>Performance cookies help us understand how visitors interact with our website by collecting and reporting information anonymously. These cookies allow us to count visits and traffic sources so we can measure and improve the performance of our site. They help us know which pages are most and least popular.</p>
+                        <p>We use Google Analytics cookies to track site usage and performance. These cookies collect information about how visitors use our site, including the number of visitors, where visitors come from, and the pages they visit. All information these cookies collect is aggregated and therefore anonymous.</p>
+                    </div>
+                    <div class="policy-point">
+                        <h3>5. Functionality Cookies</h3>
+                        <p>Functionality cookies enable the website to provide enhanced functionality and personalization. They may be set by us or by third-party providers whose services we have added to our pages. These cookies remember choices you make (such as your username, language, or region) to provide enhanced, more personal features.</p>
+                        <p>For example, we use functionality cookies to remember your login details if you choose the "remember me" option, to remember your language preference, or to remember if you've already completed a survey. Without these cookies, certain services you have asked for cannot be provided.</p>
+                    </div>
+                    <div class="policy-point">
+                        <h3>6. Targeting/Advertising Cookies</h3>
+                        <p>These cookies may be set through our site by our advertising partners to build a profile of your interests and show you relevant advertisements on other sites. They work by uniquely identifying your browser and internet device. If you do not allow these cookies, you will experience less targeted advertising.</p>
+                        <p>We use these cookies to make advertising messages more relevant to you and your interests. They are also used to limit the number of times you see an advertisement and help measure the effectiveness of advertising campaigns. The networks that place these cookies may track your browsing across websites.</p>
+                    </div>
+                </div>
+
+                <div class="policy-section">
+                    <h2>Cookie Management</h2>
+                    <div class="policy-point">
+                        <h3>7. How to Control Cookies</h3>
+                        <p>You can control and/or delete cookies as you wish. You can delete all cookies that are already on your computer and you can set most browsers to prevent them from being placed. However, if you do this, you may have to manually adjust some preferences every time you visit a site and some services and functionalities may not work.</p>
+                        <p>Most web browsers allow some control of most cookies through the browser settings. To find out more about cookies, including how to see what cookies have been set and how to manage and delete them, visit www.allaboutcookies.org. You can also adjust your cookie preferences for our site using the cookie consent tool.</p>
+                    </div>
+                    <div class="policy-point">
+                        <h3>8. Browser Settings</h3>
+                        <p>You can usually modify your browser settings to decline cookies if you prefer. The Help menu on the menu bar of most browsers will tell you how to prevent your browser from accepting new cookies, how to have the browser notify you when you receive a new cookie, and how to disable cookies altogether.</p>
+                        <p>For Chrome: Go to Settings > Privacy and security > Cookies and other site data. For Firefox: Go to Options > Privacy & Security > Cookies and Site Data. For Safari: Go to Preferences > Privacy > Cookies and website data. For Edge: Go to Settings > Cookies and site permissions > Manage and delete cookies and site data.</p>
+                    </div>
+                    <div class="policy-point">
+                        <h3>9. Third-Party Cookies</h3>
+                        <p>We use several third-party services that may also set cookies on your device when you visit our website. These include social media platforms (like Facebook and Twitter), advertising networks (like Google Ads), and analytics services (like Google Analytics). We do not control how these third parties use cookies.</p>
+                        <p>Third-party cookies are used for analytics, performance monitoring, advertising, and social media integration. For example, we use Facebook Pixel to understand the effectiveness of our Facebook ads. These third parties have their own privacy policies and cookie policies, which we recommend you review.</p>
+                    </div>
+                    <div class="policy-point">
+                        <h3>10. Cookie Duration</h3>
+                        <p>Cookies have varying lifespans. Session cookies are temporary and expire when you close your browser or after a short period of inactivity. Persistent cookies remain on your device until they expire or you delete them. The lifespan of a cookie depends on its purpose and how it's configured.</p>
+                        <p>Our strictly necessary cookies are typically session cookies that expire when you close your browser. Performance and functionality cookies may persist for longer periods, typically between 30 days and 2 years. Advertising cookies may remain for longer periods to track effectiveness of campaigns over time.</p>
+                    </div>
+                </div>
+
+                <div class="policy-section">
+                    <h2>Specific Cookies We Use</h2>
+                    <div class="policy-point">
+                        <h3>11. Google Analytics Cookies</h3>
+                        <p>We use Google Analytics to understand how our website is being used in order to improve the user experience. Google Analytics cookies collect information about how visitors use our site, including the number of visitors, the websites that referred them, and the pages they visit on our site.</p>
+                        <p>The main Google Analytics cookies used on our site are _ga (used to distinguish users, expires after 2 years), _gid (used to distinguish users, expires after 24 hours), and _gat (used to throttle request rate, expires after 1 minute). These cookies do not collect information that identifies a visitor personally.</p>
+                    </div>
+                    <div class="policy-point">
+                        <h3>12. Shopping Cart Cookies</h3>
+                        <p>When you add products to your shopping cart, we use cookies to remember your selections during your browsing session. These cookies are essential for the shopping functionality of our website. Without them, you would not be able to add items to your cart or proceed through checkout.</p>
+                        <p>The shopping cart cookies typically store a session ID that links to your cart contents on our server. They do not store personal information but allow us to maintain your cart contents as you navigate between pages. These are session cookies that expire when you close your browser.</p>
+                    </div>
+                    <div class="policy-point">
+                        <h3>13. Authentication Cookies</h3>
+                        <p>If you create an account with us or log in to an existing account, we use cookies to keep you logged in during your browsing session. These cookies contain encrypted information that allows our system to recognize you as a logged-in user without requiring you to re-enter your credentials on every page.</p>
+                        <p>Authentication cookies are essential for accessing account-specific features like order history, saved preferences, and personalized recommendations. If you select "Remember Me" during login, these cookies will persist beyond your current session. Otherwise, they expire when you close your browser.</p>
+                    </div>
+                    <div class="policy-point">
+                        <h3>14. Preference Cookies</h3>
+                        <p>Preference cookies allow our website to remember information that changes the way the site behaves or looks, such as your preferred language or the region you are in. For example, if you select English as your preferred language, a cookie will remember this preference for subsequent visits.</p>
+                        <p>We also use preference cookies to remember accessibility settings you may have chosen, such as text size or color contrast options. These cookies enhance your browsing experience by eliminating the need to reset your preferences each time you visit our website. They typically persist for longer periods.</p>
+                    </div>
+                </div>
+
+                <div class="policy-section">
+                    <h2>Privacy and Data Protection</h2>
+                    <div class="policy-point">
+                        <h3>15. Data Collected by Cookies</h3>
+                        <p>The information we collect using cookies may include your IP address, device and browser characteristics, operating system, language preferences, referring URLs, and information about how you interact with our website. This data helps us understand our audience and improve our services.</p>
+                        <p>Most cookie data is pseudonymized and aggregated for analysis. We do not use cookies to collect sensitive personal information like racial or ethnic origin, political opinions, religious beliefs, health data, or sexual orientation. Any personal data collected is processed in accordance with our Privacy Policy.</p>
+                    </div>
+                    <div class="policy-point">
+                        <h3>16. GDPR Compliance</h3>
+                        <p>For users in the European Union, we comply with the General Data Protection Regulation (GDPR) requirements regarding cookies. We obtain explicit consent before setting non-essential cookies, provide clear information about cookie usage, and offer easy-to-use controls for managing cookie preferences.</p>
+                        <p>Under GDPR, you have the right to access, rectify, or erase your personal data, as well as the right to restrict or object to processing. You can exercise these rights regarding cookie data by adjusting your browser settings or using our cookie consent tool. Our Data Protection Officer can be contacted at dpo@veinsprout.com.</p>
+                    </div>
+                    <div class="policy-point">
+                        <h3>17. CCPA Compliance</h3>
+                        <p>For California residents, the California Consumer Privacy Act (CCPA) provides specific rights regarding personal information collected through cookies. You have the right to know what personal information is collected, the right to delete personal information, and the right to opt-out of the sale of personal information.</p>
+                        <p>While we do not sell personal information in the traditional sense, some cookie-based advertising may be considered a "sale" under CCPA. You can opt-out of these practices using our cookie consent tool or the "Do Not Sell My Personal Information" link in our website footer. We do not discriminate against users who exercise their CCPA rights.</p>
+                    </div>
+                    <div class="policy-point">
+                        <h3>18. International Data Transfers</h3>
+                        <p>Some of our third-party cookie providers may process data outside your country of residence, including in the United States. When we transfer personal data outside the European Economic Area (EEA) or other jurisdictions with data transfer restrictions, we implement appropriate safeguards as required by applicable laws.</p>
+                        <p>For transfers to third countries, we rely on adequacy decisions, Standard Contractual Clauses, or other valid transfer mechanisms. Our third-party providers may participate in privacy frameworks like the EU-US Privacy Shield (where applicable) or implement other measures to ensure an adequate level of data protection.</p>
+                    </div>
+                </div>
+
+                <div class="policy-section">
+                    <h2>Technical Details</h2>
+                    <div class="policy-point">
+                        <h3>19. First-Party vs Third-Party Cookies</h3>
+                        <p>First-party cookies are set by the website you're visiting directly. These are generally safer as they can only be read by that specific website. We use first-party cookies for essential functions like maintaining your shopping cart and keeping you logged in during your session.</p>
+                        <p>Third-party cookies are set by domains other than the one you're visiting. These are typically used for advertising, analytics, and social media integration. While we carefully select our third-party providers, we cannot control how they use cookies once they're set on your device. You can block third-party cookies in your browser settings.</p>
+                    </div>
+                    <div class="policy-point">
+                        <h3>20. Secure Cookies</h3>
+                        <p>We use secure cookies for sensitive operations like authentication and checkout processes. Secure cookies are transmitted only over encrypted HTTPS connections, reducing the risk of interception by unauthorized parties. These cookies often have additional security attributes like HttpOnly and SameSite restrictions.</p>
+                        <p>HttpOnly cookies cannot be accessed by client-side scripts, which helps protect against cross-site scripting (XSS) attacks. SameSite cookies restrict how cookies are sent with cross-site requests, helping prevent cross-site request forgery (CSRF) attacks. Our security cookies also have short lifespans to minimize risk if compromised.</p>
+                    </div>
+                    <div class="policy-point">
+                        <h3>21. Supercookies and Similar Technologies</h3>
+                        <p>We do not use "supercookies" or other tracking technologies that are difficult to detect or remove. Our website only uses standard HTTP cookies that can be easily managed through browser settings. We believe in transparent tracking practices and provide clear information about all tracking technologies we employ.</p>
+                        <p>We also avoid using flash cookies (Local Shared Objects), HTML5 local storage for tracking purposes, or other sneaky tracking methods. Any local storage we do use (for legitimate functionality purposes like caching) is clearly documented and can be cleared through standard browser controls alongside cookies.</p>
+                    </div>
+                    <div class="policy-point">
+                        <h3>22. Cookie Expiration</h3>
+                        <p>Each cookie we set has an appropriate expiration period based on its purpose. Session cookies expire when you close your browser. Persistent cookies have expiration dates ranging from 24 hours to 2 years, depending on their function. We regularly review cookie lifespans to balance functionality with privacy considerations.</p>
+                        <p>Authentication cookies for "Remember Me" functionality expire after 30 days of inactivity. Analytics cookies typically expire between 30 days and 2 years. Preference cookies may persist for up to 1 year. Advertising cookies often have shorter lifespans (30-90 days) unless used for conversion tracking of longer sales cycles.</p>
+                    </div>
+                </div>
+
+                <div class="policy-section">
+                    <h2>User Choices and Controls</h2>
+                    <div class="policy-point">
+                        <h3>23. Cookie Consent Tool</h3>
+                        <p>We provide a cookie consent tool that allows you to customize your cookie preferences. When you first visit our site, you'll see a banner explaining our cookie use with options to accept all, reject non-essential, or customize settings. Your preferences are stored in a cookie so we can remember your choices for future visits.</p>
+                        <p>The cookie consent tool categorizes cookies as Essential, Performance, Functional, and Targeting. You can toggle each category on or off according to your preferences. Essential cookies cannot be disabled as they are required for basic site functionality. Changes to preferences can be made at any time through the tool.</p>
+                    </div>
+                    <div class="policy-point">
+                        <h3>24. Do Not Track Signals</h3>
+                        <p>Some browsers offer a "Do Not Track" (DNT) feature that sends a signal to websites requesting not to track the user. Currently, there is no industry standard for how to respond to DNT signals. Like many websites, our site does not currently respond to DNT signals as we await clearer regulatory guidance.</p>
+                        <p>However, we provide equivalent functionality through our cookie consent tool, which allows you to opt-out of tracking cookies. We continue to monitor developments around DNT technology and will update our practices if standards emerge. In the meantime, our cookie controls provide comprehensive privacy options.</p>
+                    </div>
+                    <div class="policy-point">
+                        <h3>25. Opting Out of Interest-Based Advertising</h3>
+                        <p>To opt-out of interest-based advertising from participating companies, you can visit the Digital Advertising Alliance's opt-out page at optout.aboutads.info or the Network Advertising Initiative's opt-out page at optout.networkadvertising.org. These opt-outs are device- and browser-specific.</p>
+                        <p>For mobile devices, you may need to adjust your device settings to limit ad tracking. On iOS, go to Settings > Privacy > Advertising > Limit Ad Tracking. On Android, go to Google Settings > Ads > Opt out of interest-based ads. These opt-outs don't block all ads, just those targeted to your interests.</p>
+                    </div>
+                    <div class="policy-point">
+                        <h3>26. Managing Flash Cookies</h3>
+                        <p>While we don't use Flash cookies (Local Shared Objects) for tracking, some third-party services that integrate with our site might. To manage Flash cookies, you must visit the Adobe Flash Player Settings Manager, which allows you to control storage of Flash cookies on your computer.</p>
+                        <p>The Settings Manager lets you delete existing Flash cookies, prevent new ones from being created, and set storage limits. Since Flash cookies can store more data than regular cookies and aren't controlled through standard browser settings, it's important to manage them separately if you're concerned about tracking.</p>
+                    </div>
+                </div>
+
+                <div class="policy-section">
+                    <h2>Policy Details</h2>
+                    <div class="policy-point">
+                        <h3>27. Changes to This Policy</h3>
+                        <p>We may update this Cookies Policy from time to time to reflect changes in our practices, technologies, or legal requirements. When we make changes, we'll update the "Last Updated" date at the top of this page. Significant changes will be communicated through prominent notices on our website or direct notifications.</p>
+                        <p>We encourage you to periodically review this policy to stay informed about how we use cookies. Your continued use of our website after any changes constitutes acceptance of the updated policy. If you disagree with any changes, you should adjust your cookie settings or discontinue using our site.</p>
+                    </div>
+                    <div class="policy-point">
+                        <h3>28. Contact Information</h3>
+                        <p>If you have any questions about our use of cookies or this policy, please contact our Data Protection Officer at:</p>
+                        <p>VeinSprout Data Protection Officer<br>
+                        25 Union Square W<br>
+                        New York, NY 10003, USA<br>
+                        Email: dpo@veinsprout.com<br>
+                        Phone: (212) 555-0198 ext. 7</p>
+                        <p>For general inquiries, please use our main contact form. For privacy-specific concerns, please include "Cookie Policy Inquiry" in your subject line to ensure prompt routing to the appropriate team.</p>
+                    </div>
+                    <div class="policy-point">
+                        <h3>29. Legal Basis for Processing</h3>
+                        <p>For essential cookies, our legal basis for processing is legitimate interest - these cookies are necessary to provide the services you request. For non-essential cookies, we rely on your consent as the legal basis for processing. You can withdraw consent at any time through our cookie consent tool.</p>
+                        <p>In some jurisdictions, additional legal bases may apply. For example, certain performance cookies may be justified by legitimate interest in improving our services. We conduct legitimate interest assessments where applicable to ensure our interests don't override your fundamental rights and freedoms.</p>
+                    </div>
+                    <div class="policy-point">
+                        <h3>30. Children's Privacy</h3>
+                        <p>Our website is not directed at children under 13, and we do not knowingly collect personal information from children through cookies or other means. For school accounts where children may access our services, we rely on schools to obtain any necessary parental consents as required by laws like COPPA.</p>
+                        <p>We implement additional protections for any personal data collected from known child users, including limiting tracking and avoiding behavioral advertising. Parents or guardians who believe their child has provided personal information to us should contact us immediately so we can delete such information.</p>
+                    </div>
+                </div>
+
+                <div class="policy-section">
+                    <h2>Additional Information</h2>
+                    <div class="policy-point">
+                        <h3>31. Cookie List</h3>
+                        <p>Below is a non-exhaustive list of cookies we may use on our website. The actual cookies set may vary based on your interactions with the site and your cookie preferences:</p>
+                        <p>- Essential: session_id (session), cart_token (session), csrf_token (session)<br>
+                        - Performance: _ga (2 years), _gid (24 hours), _gat (1 minute)<br>
+                        - Functional: language (1 year), user_prefs (1 year), auth_token (30 days)<br>
+                        - Targeting: fr (3 months), _fbp (3 months), IDE (1 year)</p>
+                        <p>For a complete, up-to-date list of cookies currently in use on our site, please use your browser's developer tools to inspect the cookies set during your visit.</p>
+                    </div>
+                    <div class="policy-point">
+                        <h3>32. Cookie Storage</h3>
+                        <p>Cookies are stored in your web browser's cookie storage, which is separate from other browser storage mechanisms like localStorage or IndexedDB. Each browser manages cookies independently, so preferences set in one browser won't affect others. Cookies are domain-specific and can only be read by the domain that set them.</p>
+                        <p>Browser cookie storage limits vary but are typically around 4KB per cookie, with 50-150 cookies allowed per domain. We design our cookies to stay well within these limits. Most browsers allow you to view, manage, and delete cookies through their settings or developer tools.</p>
+                    </div>
+                    <div class="policy-point">
+                        <h3>33. Cookie Security</h3>
+                        <p>We implement several security measures for our cookies: using the Secure attribute for HTTPS-only transmission, HttpOnly flag to prevent JavaScript access, SameSite attributes to prevent CSRF attacks, and short expiration times for sensitive cookies. We also limit the amount of personal data stored directly in cookies.</p>
+                        <p>For authentication cookies, we use cryptographic signing to prevent tampering and store only session identifiers rather than actual credentials. Our cookies are regularly reviewed for security best practices, and we promptly address any identified vulnerabilities in our cookie implementation.</p>
+                    </div>
+                    <div class="policy-point">
+                        <h3>34. Cookie Performance Impact</h3>
+                        <p>Cookies have minimal impact on website performance. Each cookie adds a small amount of data to HTTP requests (typically less than 1KB total for all cookies). Modern browsers are optimized to handle cookies efficiently, and we keep our cookie usage lean to ensure fast page loads.</p>
+                        <p>Some third-party cookies may have a greater performance impact if they trigger additional network requests. Our cookie consent tool allows you to block these if performance is a concern. We regularly audit third-party scripts to ensure they don't negatively affect user experience.</p>
+                    </div>
+                    <div class="policy-point">
+                        <h3>35. Cross-Device Tracking</h3>
+                        <p>We may use cookies and other technologies to recognize you across different devices when you log into your account. This helps provide a consistent experience whether you're using a computer, tablet, or smartphone. We don't attempt to track non-logged-in users across devices.</p>
+                        <p>Cross-device tracking is limited to authenticated users and is used only to improve service quality (like syncing your shopping cart across devices). You can prevent cross-device tracking by logging out of your account on shared devices and not using the "Remember Me" feature.</p>
+                    </div>
+                </div>
+
+                <div class="policy-section">
+                    <h2>Special Cases</h2>
+                    <div class="policy-point">
+                        <h3>36. Email Tracking</h3>
+                        <p>Our marketing emails may contain web beacons or tracking pixels to determine whether emails are opened and which links are clicked. This helps us improve the relevance of our communications. You can opt-out of email tracking by disabling images in your email client or unsubscribing from our emails.</p>
+                        <p>Email tracking is separate from website cookie tracking, though the data may be combined if you click through to our website. The information collected includes whether and when you opened the email, your IP address, browser or email client type, and which links you clicked.</p>
+                    </div>
+                    <div class="policy-point">
+                        <h3>37. Social Media Widgets</h3>
+                        <p>Our website includes social media features like Facebook "Like" buttons and Twitter "Tweet" buttons. These features may set cookies to enable functionality and track your interaction with the widget. The social media providers are responsible for these cookies - we don't control how they use the data.</p>
+                        <p>Social media cookies are only set if you interact with the widgets. Simply visiting a page with these elements won't set cookies unless you click them. You can prevent social media cookies by not interacting with these widgets or using browser extensions that block social media trackers.</p>
+                    </div>
+                    <div class="policy-point">
+                        <h3>38. Embedded Content</h3>
+                        <p>Pages on our site may include embedded content (e.g., videos from YouTube, maps from Google Maps). Embedded content behaves as if you visited the other website, and these sites may set their own cookies. We don't control these cookies and recommend reviewing the third party's cookie policy.</p>
+                        <p>To minimize tracking from embedded content, we use privacy-enhanced modes where available (like YouTube's nocookie domain). Some embedded elements won't function properly without cookies, so you may need to choose between functionality and privacy when interacting with these features.</p>
+                    </div>
+                    <div class="policy-point">
+                        <h3>39. Affiliate Links</h3>
+                        <p>Some links on our site may be affiliate links that earn us a commission if you make a purchase. These links may set cookies to track referrals. We clearly identify affiliate relationships where required, and you can avoid these cookies by not clicking affiliate links or clearing cookies after clicking.</p>
+                        <p>Affiliate cookies typically track that you came from our site and may credit us for any resulting purchases. They don't provide the affiliate with your personal information unless you choose to share it during the purchase process. Each affiliate program has its own cookie policies we don't control.</p>
+                    </div>
+                    <div class="policy-point">
+                        <h3>40. Policy Acceptance</h3>
+                        <p>By using our website after being informed of our cookie practices, you consent to our use of cookies as described in this policy, to the extent such consent is required by applicable law. For non-essential cookies, we obtain explicit consent through our cookie consent tool before setting these cookies.</p>
+                        <p>Your consent applies to the following domains: veinsprout.com and all subdomains. You can withdraw or modify your consent at any time through our cookie consent tool or browser settings. Withdrawing consent may affect the functionality of certain website features that rely on non-essential cookies.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <h3>VeinSprout</h3>
+                        <p>Tiny veins, mighty beginnings.</p>
+                    </div>
+                    <p>Innovative gardening solutions that connect people with the fascinating world of plant growth from the roots up.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="index.html#products">Products</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="cookies.html">Cookies Policy</a></li>
+                        <li><a href="#">Shipping Policy</a></li>
+                        <li><a href="#">Returns Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> 25 Union Square W, New York, NY 10003, USA</p>
+                    <p><i class="fas fa-phone"></i> (212) 555-0198</p>
+                    <p><i class="fas fa-envelope"></i> info@veinsprout.com</p>
+                    <p><i class="fas fa-clock"></i> Mon-Fri: 9am-6pm EST</p>
+                    <p><i class="fas fa-phone-volume"></i> Toll Free: 1-800-VEINSPR (834-6777)</p>
+                </div>
+                <div class="footer-social">
+                    <h4>Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                    <h4 style="margin-top: 20px;">Newsletter</h4>
+                    <p>Subscribe for gardening tips and exclusive offers.</p>
+                    <form>
+                        <input type="email" placeholder="Your Email" style="padding: 10px; width: 100%; margin-top: 10px; border-radius: 5px; border: none;">
+                        <button type="submit" style="margin-top: 10px; padding: 10px 15px; background-color: var(--secondary-color); color: white; border: none; border-radius: 5px; cursor: pointer;">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 VeinSprout. All Rights Reserved. | <a href="privacy.html" style="color: var(--secondary-color);">Privacy Policy</a> | <a href="terms.html" style="color: var(--secondary-color);">Terms of Service</a> | <a href="#" style="color: var(--secondary-color);">Do Not Sell My Personal Information</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cookie Consent Dialog -->
+    <div class="cookie-consent" id="cookieConsent">
+        <div class="cookie-container">
+            <div class="cookie-text">
+                <p>We use cookies to enhance your browsing experience, analyze site traffic, and personalize content. By clicking "Accept All", you consent to our use of cookies. You can manage your preferences at any time by clicking "Cookie Settings". For more information, please see our <a href="cookies.html">Cookies Policy</a>.</p>
+            </div>
+            <div class="cookie-buttons">
+                <button class="cookie-btn cookie-settings" id="cookieSettings">Cookie Settings</button>
+                <button class="cookie-btn cookie-decline" id="cookieDecline">Decline All</button>
+                <button class="cookie-btn cookie-accept" id="cookieAccept">Accept All</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.querySelector('.mobile-menu');
+            const navMenu = document.querySelector('nav ul');
+            
+            mobileMenuBtn.addEventListener('click', () => {
+                navMenu.classList.toggle('show');
+            });
+            
+            // Cookie Consent Functionality
+            const cookieConsent = document.getElementById('cookieConsent');
+            const cookieAccept = document.getElementById('cookieAccept');
+            const cookieDecline = document.getElementById('cookieDecline');
+            const cookieSettings = document.getElementById('cookieSettings');
+            
+            // Check if user has already made a choice
+            if (!localStorage.getItem('cookieConsent')) {
+                cookieConsent.style.display = 'block';
+            }
+            
+            // Accept all cookies
+            cookieAccept.addEventListener('click', () => {
+                localStorage.setItem('cookieConsent', 'all');
+                cookieConsent.style.display = 'none';
+                // Here you would typically set all cookies
+                alert('All cookies accepted. Thank you!');
+            });
+            
+            // Decline non-essential cookies
+            cookieDecline.addEventListener('click', () => {
+                localStorage.setItem('cookieConsent', 'essential');
+                cookieConsent.style.display = 'none';
+                // Here you would typically block non-essential cookies
+                alert('Only essential cookies will be used. Some features may not work properly.');
+            });
+            
+            // Open cookie settings
+            cookieSettings.addEventListener('click', () => {
+                // In a real implementation, this would open a more detailed settings panel
+                alert('Cookie settings would open here, allowing you to customize which types of cookies to accept.');
+            });
+            
+            // FAQ Accordion Functionality
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', () => {
+                    const item = question.parentElement;
+                    item.classList.toggle('active');
+                    
+                    // Close other open items
+                    faqQuestions.forEach(q => {
+                        if (q !== question) {
+                            q.parentElement.classList.remove('active');
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

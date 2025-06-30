@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | VeinSprout</title>
+    <style>
+        /* Global Styles */
+        :root {
+            --primary-color: #2e7d32;
+            --secondary-color: #81c784;
+            --accent-color: #ffb74d;
+            --light-color: #f1f8e9;
+            --dark-color: #1b5e20;
+            --text-color: #333;
+            --white: #ffffff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 50px;
+            margin-right: 15px;
+        }
+        
+        .logo-text h1 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        .logo-text p {
+            color: var(--dark-color);
+            font-size: 0.9rem;
+            font-style: italic;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+        
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Privacy Policy Content */
+        .privacy-policy {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+        
+        .privacy-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .privacy-header h1 {
+            font-size: 2.8rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .privacy-header p {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .privacy-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .policy-section {
+            margin-bottom: 40px;
+        }
+        
+        .policy-section h2 {
+            font-size: 1.8rem;
+            color: var(--dark-color);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--secondary-color);
+        }
+        
+        .policy-point {
+            margin-bottom: 30px;
+        }
+        
+        .policy-point h3 {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        .policy-point p {
+            margin-bottom: 10px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: var(--white);
+            padding: 60px 0 20px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-logo {
+            margin-bottom: 20px;
+        }
+        
+        .footer-logo h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--white);
+        }
+        
+        .footer-logo p {
+            font-style: italic;
+        }
+        
+        .footer-links h4 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links ul li a {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links ul li a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .footer-contact h4 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+        }
+        
+        .footer-contact p {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .footer-contact i {
+            margin-right: 10px;
+            margin-top: 3px;
+        }
+        
+        .footer-social h4 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--white);
+            font-size: 1.2rem;
+            transition: background-color 0.3s;
+        }
+        
+        .social-icons a:hover {
+            background-color: var(--secondary-color);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .footer-bottom p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 10px 0;
+            }
+            
+            .privacy-header h1 {
+                font-size: 2.2rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .privacy-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .policy-section h2 {
+                font-size: 1.5rem;
+            }
+            
+            .policy-point h3 {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="p1.png" alt="VeinSprout Logo">
+                <div class="logo-text">
+                    <h1>VeinSprout</h1>
+                    <p>Tiny veins, mighty beginnings.</p>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                     <li><a href="index.html">Home</a></li>
+                    <li><a href="privacy.html">Privacy</a></li>
+                    <li><a href="terms.html">Terms</a></li>
+                    <li><a href="cookies.html">Cookies</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Privacy Policy Content -->
+    <section class="privacy-policy">
+        <div class="container">
+            <div class="privacy-header">
+                <h1>Privacy Policy</h1>
+                <p>Last Updated: June 28, 2023</p>
+            </div>
+            <div class="privacy-content">
+                <div class="policy-section">
+                    <h2>Introduction</h2>
+                    <div class="policy-point">
+                        <h3>1. Our Commitment to Privacy</h3>
+                        <p>VeinSprout ("we," "us," or "our") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services. We respect your privacy and are dedicated to maintaining the confidentiality of your personal information.</p>
+                        <p>This policy applies to information we collect on our website, through email, text, or other electronic communications, and through any mobile or desktop applications. By accessing or using our services, you agree to this privacy policy. If you do not agree with our policies and practices, please do not use our services.</p>
+                    </div>
+                    <div class="policy-point">
+                        <h3>2. Scope of This Policy</h3>
+                        <p>This Privacy Policy covers all personal information collected by VeinSprout through our website, products, and services. It describes the types of information we may collect from you or that you may provide when you visit veinsprout.com or use our mobile applications, including information provided when purchasing products, registering for an account, subscribing to our newsletter, or contacting customer service.</p>
+                        <p>The policy does not apply to information collected by third parties, including through any application or content that may link to or be accessible from our services. We encourage you to review the privacy policies of any third-party sites you visit. Our privacy practices may change over time, and we will post any updates on this page with a new "Last Updated" date.</p>
+                    </div>
+                </div>
+
+                <div class="policy-section">
+                    <h2>Information We Collect</h2>
+                    <div class="policy-point">
+                        <h3>3. Personal Identification Information</h3>
+                        <p>We collect personal identification information that you voluntarily provide to us when you register on our site, place an order, subscribe to our newsletter, respond to a survey, fill out a form, or otherwise interact with our services. This may include your name, email address, mailing address, phone number, payment information, and other details necessary to process your transactions or provide services.</p>
+                        <p>For educational institutions purchasing our classroom kits, we may collect additional information such as school name, district information, purchase orders, and teacher contact details. You may choose not to provide certain personal information, but this may limit your ability to use some features of our services or complete purchases.</p>
+                    </div>
+                    <div class="policy-point">
+                        <h3>4. Non-Personal Identification Information</h3>
+                        <p>We automatically collect certain non-personal information when you interact with our website, including browser type, device type, operating system, Internet service provider, IP address, pages visited, time spent on pages, and other usage statistics. This information helps us improve our website and services, analyze trends, administer the site, track user movements, and gather demographic information.</p>
+                        <p>We may use cookies, web beacons, and similar tracking technologies to collect this information. Cookies are small data files stored on your device that help us recognize returning visitors and enhance user experience. You can set your browser to refuse all or some cookies, but some parts of our site may not function properly as a result.</p>
+                    </div>
+                    <div class="policy-point">
+                        <h3>5. Payment Information</h3>
+                        <p>When you make purchases through our website, we collect payment information necessary to process your transaction. This includes credit card numbers, expiration dates, security codes, and billing addresses. All payment transactions are processed through secure, PCI-compliant payment processors, and we do not store complete credit card information on our servers.</p>
+                        <p>For recurring subscriptions or school purchase orders, we may retain limited payment information to facilitate future transactions, but sensitive data is encrypted and stored securely. You may update or delete your payment information at any time through your account settings or by contacting our customer service team.</p>
+                    </div>
+                    <div class="policy-point">
+                        <h3>6. Children's Information</h3>
+                        <p>Our products are designed for educational use by children under supervision, but our website is not directed at children under 13. We do not knowingly collect personal information from children under 13 without verifiable parental consent. If we learn we have collected such information without consent, we will delete it immediately.</p>
+                        <p>For school purchases where student information may be provided (such as for classroom kits), we require schools to obtain all necessary consents and comply with applicable laws like COPPA and FERPA. We only use such information to fulfill the educational purpose and do not share it with third parties for marketing purposes.</p>
+                    </div>
+                </div>
+
+                <div class="policy-section">
+                    <h2>How We Use Your Information</h2>
+                    <div class="policy-point">
+                        <h3>7. To Provide and Improve Our Services</h3>
+                        <p>We use collected information to operate, maintain, and improve our website, products, and services. This includes processing transactions, delivering products, providing customer support, personalizing user experience, developing new features, and ensuring the security of our systems. Your information helps us respond to your requests more efficiently and tailor our offerings to user preferences.</p>
+                        <p>For educational customers, we may use information to provide specialized support, curriculum recommendations, and professional development opportunities. Usage data helps us identify which products and resources are most valuable to educators and students, allowing us to focus our development efforts accordingly.</p>
+                    </div>
+                    <div class="policy-point">
+                        <h3>8. Communication Purposes</h3>
+                        <p>We may use your email address to send you information and updates pertaining to your order, company news, product information, service updates, and promotional materials. You can opt-out of receiving marketing communications at any time by following the unsubscribe instructions included in these emails or by contacting us directly.</p>
+                        <p>For account holders, we may send service-related announcements when it's necessary to do so (such as temporary service suspensions or security updates). These communications are not promotional in nature and you may not opt-out of them while maintaining an active account with us.</p>
+                    </div>
+                    <div class="policy-point">
+                        <h3>9. Marketing and Advertising</h3>
+                        <p>We may use information about your purchases, preferences, and website interactions to provide you with targeted content and advertisements tailored to your interests. This may include displaying relevant product recommendations on our website or through third-party platforms like Google or Facebook.</p>
+                        <p>We may participate in interest-based advertising and use third-party advertising companies to serve ads when you visit our website. These companies may use information about your visits to our and other websites to provide advertisements about goods and services that may interest you. You can opt-out of this type of advertising through the Digital Advertising Alliance's consumer choice tools.</p>
+                    </div>
+                    <div class="policy-point">
+                        <h3>10. Analytics and Research</h3>
+                        <p>We analyze user behavior and preferences to understand how our products and services are used, identify areas for improvement, and conduct market research. This may involve aggregating and anonymizing data to create statistical reports that help guide our business decisions without identifying individual users.</p>
+                        <p>For educational products, we may analyze usage patterns to improve curriculum effectiveness and develop better teaching tools. This research is conducted with appropriate safeguards to protect personal information and is often done in collaboration with educational institutions under data sharing agreements.</p>
+                    </div>
+                </div>
+
+                <div class="policy-section">
+                    <h2>How We Share Your Information</h2>
+                    <div class="policy-point">
+                        <h3>11. With Service Providers</h3>
+                        <p>We may share your information with trusted third-party service providers who assist us in operating our website, conducting our business, or servicing you, as long as those parties agree to keep this information confidential. These include payment processors, shipping carriers, email service providers, marketing platforms, and IT service providers.</p>
+                        <p>All third-party service providers are carefully vetted and required to maintain appropriate security measures to protect your information. They are only provided with the information necessary to perform their specific functions and are prohibited from using it for any other purpose. We remain responsible for the protection of your information that we share with these vendors.</p>
+                    </div>
+                    <div class="policy-point">
+                        <h3>12. For Legal Compliance</h3>
+                        <p>We may disclose your information when required by law or in response to valid legal processes such as subpoenas, court orders, or government requests. We may also share information when we believe disclosure is necessary to protect our rights, protect your safety or the safety of others, investigate fraud, or respond to a government request.</p>
+                        <p>In the event of a business transition such as a merger, acquisition, or sale of assets, your information may be transferred as part of that transaction. You will be notified via email and/or prominent notice on our website of any such change in ownership or control of your personal information, as well as any choices you may have regarding your information.</p>
+                    </div>
+                    <div class="policy-point">
+                        <h3>13. With Educational Partners</h3>
+                        <p>For school and institutional purchases, we may share order and usage information with the educational institution for administrative and reporting purposes. This may include confirming orders, providing usage reports, or coordinating professional development opportunities.</p>
+                        <p>When products are purchased for classroom use, we may share limited information with teachers or administrators to facilitate implementation and support. We never sell student information to third parties or use it for marketing purposes without explicit consent from the educational institution or parents as required by law.</p>
+                    </div>
+                    <div class="policy-point">
+                        <h3>14. Aggregate or De-identified Data</h3>
+                        <p>We may share aggregated, anonymized, or de-identified information with partners, researchers, or the public to demonstrate trends, product effectiveness, or for other business purposes. This information cannot reasonably be used to identify individual users and is therefore not considered personal information under this policy.</p>
+                        <p>For example, we might publish statistics about the percentage of users who purchase certain products or the average growth rates observed in classroom experiments using our kits. These reports help advance plant science education while protecting individual privacy.</p>
+                    </div>
+                </div>
+
+                <div class="policy-section">
+                    <h2>Data Security</h2>
+                    <div class="policy-point">
+                        <h3>15. Protection Measures</h3>
+                        <p>We implement appropriate technical and organizational security measures designed to protect your personal information from accidental loss, unauthorized access, disclosure, alteration, and destruction. These include encryption, access controls, secure servers, and regular security audits.</p>
+                        <p>All transactions are processed through a gateway provider and are not stored or processed on our servers. We maintain physical, electronic, and procedural safeguards in connection with the collection, storage, and disclosure of personal information. Our security procedures may require proof of identity before we disclose personal information to you.</p>
+                    </div>
+                    <div class="policy-point">
+                        <h3>16. Data Retention</h3>
+                        <p>We retain personal information only for as long as necessary to fulfill the purposes for which it was collected, including for the purposes of satisfying any legal, accounting, or reporting requirements. When determining the appropriate retention period, we consider the amount, nature, and sensitivity of the data, potential risk of harm from unauthorized use or disclosure, and applicable legal requirements.</p>
+                        <p>Account information is generally retained while your account remains active and for a reasonable period afterward in case you decide to reactivate your account. Transaction records are typically maintained for at least seven years to comply with tax and accounting regulations. You may request deletion of your personal information, subject to certain legal exceptions.</p>
+                    </div>
+                    <div class="policy-point">
+                        <h3>17. Incident Response</h3>
+                        <p>In the event of a data breach that affects your personal information, we will notify you and any applicable regulators when we are legally required to do so. Our incident response plan includes steps to contain the breach, assess the risks, notify affected parties, and take corrective action to prevent future occurrences.</p>
+                        <p>We maintain a dedicated security team that monitors our systems for vulnerabilities and responds to potential threats. All employees receive regular training on data protection practices and are required to follow strict protocols when handling personal information.</p>
+                    </div>
+                    <div class="policy-point">
+                        <h3>18. Your Role in Security</h3>
+                        <p>While we implement robust security measures, the transmission of information via the internet is not completely secure. We encourage you to take steps to protect your personal information, such as choosing strong passwords, keeping your login credentials confidential, and logging out of shared computers.</p>
+                        <p>If you have reason to believe your interaction with us is no longer secure (for example, if you feel the security of any account you might have with us has been compromised), please immediately notify us at security@veinsprout.com. We will work with you to investigate and resolve any security concerns.</p>
+                    </div>
+                </div>
+
+                <div class="policy-section">
+                    <h2>Your Rights and Choices</h2>
+                    <div class="policy-point">
+                        <h3>19. Access and Correction</h3>
+                        <p>You have the right to access the personal information we hold about you and to request correction of any inaccurate or incomplete information. Registered users can view and update much of their information through their account settings on our website.</p>
+                        <p>For information not accessible through your account or if you don't have an account, you may submit a request by contacting us at privacy@veinsprout.com. We may need to verify your identity before processing such requests. In some cases, we may have legal grounds to deny certain access requests as permitted by applicable law.</p>
+                    </div>
+                    <div class="policy-point">
+                        <h3>20. Data Portability</h3>
+                        <p>Where applicable under law, you may request a copy of your personal information in a structured, commonly used, and machine-readable format. This right applies to personal information you have provided to us that we process by automated means based on your consent or for the performance of a contract.</p>
+                        <p>We will provide your data in a commonly used electronic format that allows you to transfer the information to another service provider if desired. There is typically no charge for this service, though we may charge a reasonable fee if your request is clearly unfounded, repetitive, or excessive.</p>
+                    </div>
+                    <div class="policy-point">
+                        <h3>21. Deletion Requests</h3>
+                        <p>You may request deletion of your personal information, subject to certain exceptions where we are required to retain information by law or have compelling legitimate interests to retain it. Once deleted, your data will be removed from active databases but may remain in backup systems until those backups are cycled out.</p>
+                        <p>Note that deleting your account or personal information may limit or prevent your ability to access certain services or features. We may also retain anonymized information that cannot be associated with you for analytical purposes. To request deletion, please contact us at privacy@veinsprout.com with "Deletion Request" in the subject line.</p>
+                    </div>
+                    <div class="policy-point">
+                        <h3>22. Marketing Preferences</h3>
+                        <p>You can opt-out of receiving marketing communications from us by using the unsubscribe link in any marketing email we send or by contacting us at unsubscribe@veinsprout.com. Even if you opt-out of marketing emails, we may still send you non-promotional communications, such as those about your account or our ongoing business relations.</p>
+                        <p>For targeted online advertising, you can opt-out through the Digital Advertising Alliance's consumer choice tools at optout.aboutads.info. Mobile device users may also adjust their device settings to limit ad tracking. These choices are device- and browser-specific, so you may need to opt-out on each device and browser you use.</p>
+                    </div>
+                    <div class="policy-point">
+                        <h3>23. Cookie Preferences</h3>
+                        <p>Most web browsers are set to accept cookies by default. You can usually choose to set your browser to remove or reject browser cookies. Please note that if you choose to remove or reject cookies, this could affect the availability and functionality of our website.</p>
+                        <p>We provide a cookie preference center where you can adjust your settings for non-essential cookies. Essential cookies necessary for site functionality cannot be disabled. For more information about cookies and how to manage them, visit allaboutcookies.org or your browser's help documentation.</p>
+                    </div>
+                    <div class="policy-point">
+                        <h3>24. Do Not Track Signals</h3>
+                        <p>Some browsers offer a "Do Not Track" (DNT) feature that lets you tell websites you do not want to be tracked. Currently, we do not respond to DNT browser signals or similar mechanisms because no industry standard for DNT has been established.</p>
+                        <p>We continue to monitor developments around DNT browser technology and the implementation of a standard. If a standard for online tracking is adopted that we must follow in the future, we will update this policy to reflect that change and inform you about your choices.</p>
+                    </div>
+                </div>
+
+                <div class="policy-section">
+                    <h2>International Data Transfers</h2>
+                    <div class="policy-point">
+                        <h3>25. Cross-Border Data Flows</h3>
+                        <p>VeinSprout is based in the United States, and your information may be transferred to, stored, and processed in the U.S. or other countries where our service providers operate. These countries may have data protection laws that differ from those in your country of residence.</p>
+                        <p>When we transfer personal information from the European Economic Area (EEA), UK, or Switzerland to countries not deemed by the European Commission to provide an adequate level of protection, we implement appropriate safeguards such as standard contractual clauses approved by the European Commission or other lawful mechanisms to ensure your rights and protections travel with your data.</p>
+                    </div>
+                    <div class="policy-point">
+                        <h3>26. GDPR Compliance</h3>
+                        <p>For users in the European Union, we comply with the General Data Protection Regulation (GDPR). This means we only process personal data when we have a lawful basis to do so, which may include your consent, the performance of a contract, compliance with legal obligations, or our legitimate interests that are not overridden by your rights.</p>
+                        <p>EU residents have additional rights under GDPR, including the right to restriction of processing, objection to processing, and the right to lodge a complaint with a supervisory authority. To exercise these rights, please contact us at privacy@veinsprout.com with "GDPR Request" in the subject line.</p>
+                    </div>
+                    <div class="policy-point">
+                        <h3>27. CCPA Compliance</h3>
+                        <p>For California residents, the California Consumer Privacy Act (CCPA) provides additional rights regarding personal information. Under CCPA, you have the right to know what personal information we collect, use, disclose, and sell; the right to delete personal information; the right to opt-out of the sale of personal information; and the right to non-discrimination for exercising these rights.</p>
+                        <p>We do not sell personal information as defined under CCPA. California residents may designate an authorized agent to make requests on their behalf. To exercise CCPA rights, please contact us at privacy@veinsprout.com or call our toll-free number at 1-800-VEINSPR (834-6777). We will verify your identity before processing requests.</p>
+                    </div>
+                </div>
+
+                <div class="policy-section">
+                    <h2>Third-Party Links and Services</h2>
+                    <div class="policy-point">
+                        <h3>28. External Websites</h3>
+                        <p>Our website may contain links to third-party websites, plug-ins, and applications. Clicking on those links may allow third parties to collect or share data about you. We do not control these third-party websites and are not responsible for their privacy statements.</p>
+                        <p>We encourage you to read the privacy policy of every website you visit, especially before providing any personal information. This Privacy Policy applies solely to information collected by VeinSprout through our official channels. The inclusion of a link does not imply endorsement of the linked site or service by us.</p>
+                    </div>
+                    <div class="policy-point">
+                        <h3>29. Social Media Features</h3>
+                        <p>Our website includes social media features such as Facebook "Like" buttons and Twitter "Tweet" buttons. These features may collect your IP address and which page you are visiting on our site, and may set a cookie to enable the feature to function properly.</p>
+                        <p>Social media features are either hosted by a third party or hosted directly on our site. Your interactions with these features are governed by the privacy policy of the company providing them, not by this Privacy Policy. We recommend reviewing the privacy policies of any social media platforms you use.</p>
+                    </div>
+                    <div class="policy-point">
+                        <h3>30. Integrated Services</h3>
+                        <p>We may use third-party services that integrate with our website, such as Google Analytics for website traffic analysis or HubSpot for customer relationship management. These services may collect information sent by your browser as part of a web page request, including cookies and your IP address.</p>
+                        <p>We use these services to analyze trends, administer the site, track users' movements around the site, and gather demographic information. The third-party providers' use of this information is governed by their own privacy policies. Many offer opt-out mechanisms for their data collection practices.</p>
+                    </div>
+                </div>
+
+                <div class="policy-section">
+                    <h2>Educational and Institutional Data</h2>
+                    <div class="policy-point">
+                        <h3>31. School and District Agreements</h3>
+                        <p>When providing services to educational institutions, we may enter into additional data protection agreements that outline specific terms for handling student and educator data. These agreements take precedence over this general Privacy Policy for the covered data and services.</p>
+                        <p>We comply with all applicable education privacy laws including FERPA (Family Educational Rights and Privacy Act) in the U.S. and similar regulations internationally. School administrators may contact us at education@veinsprout.com to discuss specific data protection requirements or to request a data processing agreement.</p>
+                    </div>
+                    <div class="policy-point">
+                        <h3>32. Student Data Protection</h3>
+                        <p>For student data provided to us by schools or educators, we act as a "School Official" under FERPA and process the data only for the educational purposes specified by the school. We do not use student data for marketing purposes or share it with third parties except as necessary to provide the contracted services.</p>
+                        <p>Parents and eligible students have the right to review student data collected and maintained by us, request corrections, and prevent unauthorized disclosure. Such requests should typically be directed to the educational institution first, as they are the primary controller of the educational records.</p>
+                    </div>
+                    <div class="policy-point">
+                        <h3>33. Classroom and Research Data</h3>
+                        <p>When teachers or students submit plant growth data through our platforms (such as root measurement results), we may aggregate and analyze this information to improve our products and contribute to plant science education research. Individual student data is never identified in research publications without explicit consent.</p>
+                        <p>Schools participating in research initiatives may be asked to provide additional consent forms for students and parents. Participation in such research is always voluntary, and schools can opt out of data sharing for research purposes while still using our core products and services.</p>
+                    </div>
+                </div>
+
+                <div class="policy-section">
+                    <h2>Policy Updates and Contact</h2>
+                    <div class="policy-point">
+                        <h3>34. Changes to This Policy</h3>
+                        <p>We may update this Privacy Policy from time to time to reflect changes in our practices, technologies, legal requirements, and other factors. When we do, we will post the updated policy on this page with a new "Last Updated" date and, if changes are significant, we may provide more prominent notice.</p>
+                        <p>We encourage you to periodically review this page for the latest information on our privacy practices. Your continued use of our services after any changes constitutes your acceptance of the revised Privacy Policy. If you disagree with any changes, you should stop using our services and contact us regarding deletion of your personal information.</p>
+                    </div>
+                    <div class="policy-point">
+                        <h3>35. Contact Information</h3>
+                        <p>If you have any questions or concerns about this Privacy Policy or our data practices, please contact us at:</p>
+                        <p>VeinSprout Privacy Officer<br>
+                        25 Union Square W<br>
+                        New York, NY 10003, USA<br>
+                        Email: privacy@veinsprout.com<br>
+                        Phone: (212) 555-0198</p>
+                        <p>We take all privacy concerns seriously and will respond to your inquiry within a reasonable timeframe, typically within 30 days. For requests related to your personal information, we may need to verify your identity before processing your request to protect your privacy and security.</p>
+                    </div>
+                    <div class="policy-point">
+                        <h3>36. Dispute Resolution</h3>
+                        <p>If you have a complaint about our privacy practices, we encourage you to first contact us directly to resolve the issue. For EU residents, you have the right to lodge a complaint with your local data protection authority. For California residents, the California Attorney General's office accepts complaints about CCPA compliance.</p>
+                        <p>We commit to working with the appropriate regulatory bodies to resolve any complaints regarding the transfer of personal data that we cannot resolve directly with you. For disputes that cannot be resolved through these channels, they may be subject to binding arbitration as outlined in our Terms of Service.</p>
+                    </div>
+                </div>
+
+                <div class="policy-section">
+                    <h2>Additional Provisions</h2>
+                    <div class="policy-point">
+                        <h3>37. Text Messaging Policy</h3>
+                        <p>If you opt-in to receive text messages from us (such as order status updates or promotional offers), standard messaging rates may apply. You can opt-out of receiving text messages at any time by replying "STOP" to any message you receive from us.</p>
+                        <p>We do not share your mobile number with third parties for their marketing purposes without your explicit consent. Message frequency varies, and we will not send more than 10 messages per month unless you initiate additional conversations with our support team via text.</p>
+                    </div>
+                    <div class="policy-point">
+                        <h3>38. User-Generated Content</h3>
+                        <p>Our website may allow you to post content such as reviews, comments, or photos. Any personal information you include in such content may be read, collected, and used by others who access it. We cannot control how other users may use this information.</p>
+                        <p>You can request removal of your user-generated content by contacting us at support@veinsprout.com. In some cases, we may not be able to remove your content, particularly if it has been shared or reposted by others. We recommend being cautious about what personal information you include in public posts.</p>
+                    </div>
+                    <div class="policy-point">
+                        <h3>39. Business Transfers</h3>
+                        <p>In the event that VeinSprout is involved in a merger, acquisition, reorganization, bankruptcy, or sale of assets, your information may be transferred as part of that transaction. The promises in this Privacy Policy will apply to your information as transferred to the new entity.</p>
+                        <p>We will notify you via email and/or a prominent notice on our website of any change in ownership or uses of your personal information, as well as any choices you may have regarding your information. This Privacy Policy will become binding upon any new owner of the business.</p>
+                    </div>
+                    <div class="policy-point">
+                        <h3>40. Governing Law</h3>
+                        <p>This Privacy Policy and any disputes related to it will be governed by the laws of the State of New York, without regard to its conflict of laws principles. The exclusive jurisdiction for any claims or disputes shall be in the state and federal courts located in New York County, New York.</p>
+                        <p>For EU residents, you may also have the right to file a complaint with your local data protection authority. Nothing in this Privacy Policy limits any rights you may have under applicable data protection laws, which may supersede the governing law provisions in this section to the extent required by such laws.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <h3>VeinSprout</h3>
+                        <p>Tiny veins, mighty beginnings.</p>
+                    </div>
+                    <p>Innovative gardening solutions that connect people with the fascinating world of plant growth from the roots up.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="index.html#products">Products</a></li>
+                        <li><a href="index.html#testimonials">Testimonials</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Products</h4>
+                    <ul>
+                        <li><a href="index.html#products">Seedling Starter Kits</a></li>
+                        <li><a href="index.html#products">Root Viewers</a></li>
+                        <li><a href="index.html#products">Classroom Packages</a></li>
+                        <li><a href="index.html#products">Gardening Tools</a></li>
+                        <li><a href="index.html#products">Educational Materials</a></li>
+                        <li><a href="index.html#products">Gift Cards</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> 25 Union Square W, New York, NY 10003, USA</p>
+                    <p><i class="fas fa-phone"></i> (212) 555-0198</p>
+                    <p><i class="fas fa-envelope"></i> info@veinsprout.com</p>
+                    <p><i class="fas fa-clock"></i> Mon-Fri: 9am-6pm EST</p>
+                    <p><i class="fas fa-phone-volume"></i> Toll Free: 1-800-VEINSPR (834-6777)</p>
+                </div>
+                <div class="footer-social">
+                    <h4>Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                    <h4 style="margin-top: 20px;">Newsletter</h4>
+                    <p>Subscribe for gardening tips and exclusive offers.</p>
+                    <form>
+                        <input type="email" placeholder="Your Email" style="padding: 10px; width: 100%; margin-top: 10px; border-radius: 5px; border: none;">
+                        <button type="submit" style="margin-top: 10px; padding: 10px 15px; background-color: var(--secondary-color); color: white; border: none; border-radius: 5px; cursor: pointer;">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 VeinSprout. All Rights Reserved. | <a href="privacy.html" style="color: var(--secondary-color);">Privacy Policy</a> | <a href="#" style="color: var(--secondary-color);">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.querySelector('.mobile-menu');
+            const navMenu = document.querySelector('nav ul');
+            
+            mobileMenuBtn.addEventListener('click', () => {
+                navMenu.classList.toggle('show');
+            });
+        });
+    </script>
+</body>
+</html>

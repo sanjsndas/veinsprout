@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service | VeinSprout</title>
+    <style>
+        /* Global Styles */
+        :root {
+            --primary-color: #2e7d32;
+            --secondary-color: #81c784;
+            --accent-color: #ffb74d;
+            --light-color: #f1f8e9;
+            --dark-color: #1b5e20;
+            --text-color: #333;
+            --white: #ffffff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 50px;
+            margin-right: 15px;
+        }
+        
+        .logo-text h1 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        .logo-text p {
+            color: var(--dark-color);
+            font-size: 0.9rem;
+            font-style: italic;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+        
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Terms of Service Content */
+        .terms-of-service {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+        
+        .terms-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .terms-header h1 {
+            font-size: 2.8rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .terms-header p {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .terms-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .terms-section {
+            margin-bottom: 40px;
+        }
+        
+        .terms-section h2 {
+            font-size: 1.8rem;
+            color: var(--dark-color);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--secondary-color);
+        }
+        
+        .terms-point {
+            margin-bottom: 30px;
+        }
+        
+        .terms-point h3 {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        .terms-point p {
+            margin-bottom: 10px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: var(--white);
+            padding: 60px 0 20px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-logo {
+            margin-bottom: 20px;
+        }
+        
+        .footer-logo h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--white);
+        }
+        
+        .footer-logo p {
+            font-style: italic;
+        }
+        
+        .footer-links h4 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links ul li a {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links ul li a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .footer-contact h4 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+        }
+        
+        .footer-contact p {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .footer-contact i {
+            margin-right: 10px;
+            margin-top: 3px;
+        }
+        
+        .footer-social h4 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--white);
+            font-size: 1.2rem;
+            transition: background-color 0.3s;
+        }
+        
+        .social-icons a:hover {
+            background-color: var(--secondary-color);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .footer-bottom p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 10px 0;
+            }
+            
+            .terms-header h1 {
+                font-size: 2.2rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .terms-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .terms-section h2 {
+                font-size: 1.5rem;
+            }
+            
+            .terms-point h3 {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="p1.png" alt="VeinSprout Logo">
+                <div class="logo-text">
+                    <h1>VeinSprout</h1>
+                    <p>Tiny veins, mighty beginnings.</p>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="privacy.html">Privacy</a></li>
+                    <li><a href="terms.html">Terms</a></li>
+                    <li><a href="cookies.html">Cookies</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Terms of Service Content -->
+    <section class="terms-of-service">
+        <div class="container">
+            <div class="terms-header">
+                <h1>Terms of Service</h1>
+                <p>Last Updated: June 28, 2023</p>
+            </div>
+            <div class="terms-content">
+                <div class="terms-section">
+                    <h2>Introduction</h2>
+                    <div class="terms-point">
+                        <h3>1. Acceptance of Terms</h3>
+                        <p>By accessing or using the VeinSprout website, products, or services (collectively, the "Services"), you agree to be bound by these Terms of Service ("Terms"). These Terms apply to all visitors, users, and others who access or use the Services. If you do not agree to all of these Terms, do not use our Services.</p>
+                        <p>We may modify these Terms at any time, and such modifications shall be effective immediately upon posting the modified Terms on our website. Your continued use of the Services after such posting constitutes your acceptance of the modified Terms. It is your responsibility to review these Terms periodically for updates or changes.</p>
+                    </div>
+                    <div class="terms-point">
+                        <h3>2. Description of Services</h3>
+                        <p>VeinSprout provides seedling startup kits, root vein analysis tools, educational materials, and related services for DIY gardeners, schools, and educational institutions. Our Services include the sale of physical products, digital content, educational programs, and customer support related to these offerings.</p>
+                        <p>We reserve the right to modify or discontinue, temporarily or permanently, the Services (or any part thereof) with or without notice. You agree that VeinSprout shall not be liable to you or any third party for any modification, suspension, or discontinuance of the Services. Some Services may be subject to additional terms that will be provided with those Services.</p>
+                    </div>
+                </div>
+
+                <div class="terms-section">
+                    <h2>Account Registration</h2>
+                    <div class="terms-point">
+                        <h3>3. Account Creation</h3>
+                        <p>To access certain features of our Services, you may be required to create an account. You agree to provide accurate, current, and complete information during the registration process and to update such information to keep it accurate, current, and complete. VeinSprout reserves the right to suspend or terminate your account if any information provided proves to be inaccurate, not current, or incomplete.</p>
+                        <p>You are responsible for maintaining the confidentiality of your account credentials and for all activities that occur under your account. You agree to immediately notify VeinSprout of any unauthorized use of your account or any other breach of security. VeinSprout will not be liable for any loss or damage arising from your failure to comply with this requirement.</p>
+                    </div>
+                    <div class="terms-point">
+                        <h3>4. Account Responsibilities</h3>
+                        <p>You may not use another user's account without express permission. You may not create an account for anyone other than yourself without proper authorization. You are solely responsible for the activity that occurs on your account, and you must keep your account password secure.</p>
+                        <p>For school or institutional accounts, the account administrator is responsible for managing user access and ensuring all users comply with these Terms. VeinSprout reserves the right to refuse service, terminate accounts, remove or edit content, or cancel orders in our sole discretion, including if we determine that account usage violates these Terms or applicable laws.</p>
+                    </div>
+                </div>
+
+                <div class="terms-section">
+                    <h2>Purchases and Payments</h2>
+                    <div class="terms-point">
+                        <h3>5. Order Acceptance</h3>
+                        <p>All orders placed through our Services are subject to VeinSprout's acceptance. We may refuse or cancel any order for any reason, including limitations on product availability, inaccuracies in product or pricing information, or suspicion of fraudulent activity. In the event we cancel an order, we will attempt to notify you using the contact information provided when the order was placed.</p>
+                        <p>Your receipt of an order confirmation does not constitute our acceptance of your order. We reserve the right to limit or prohibit orders that appear to be placed by dealers, resellers, or distributors in our sole discretion. For institutional purchases, additional verification may be required before order fulfillment.</p>
+                    </div>
+                    <div class="terms-point">
+                        <h3>6. Pricing and Taxes</h3>
+                        <p>All prices shown on our website are in U.S. dollars and are subject to change without notice. We strive to display accurate price information but may, on occasion, make inadvertent typographical errors, inaccuracies, or omissions related to pricing and availability. We reserve the right to correct any errors at any time, including after an order has been submitted.</p>
+                        <p>You are responsible for any applicable sales, use, duty, customs, value-added, or other taxes that may apply to your order, based on the delivery address provided. Tax rates are calculated based on the information you provide and the applicable rates at the time of your order. For tax-exempt organizations, proper documentation must be provided before order processing.</p>
+                    </div>
+                    <div class="terms-point">
+                        <h3>7. Payment Methods</h3>
+                        <p>We accept various payment methods including major credit cards, PayPal, and institutional purchase orders. By providing a payment method, you represent that you are authorized to use the payment method and authorize us (or our third-party payment processor) to charge your payment method for the total amount of your order.</p>
+                        <p>For purchase orders from educational institutions, payment terms are net 30 days from invoice date unless otherwise agreed in writing. Late payments may be subject to interest charges of 1.5% per month (18% annually) or the maximum rate allowed by law. VeinSprout reserves the right to require prepayment or cancel orders for institutions with delinquent accounts.</p>
+                    </div>
+                    <div class="terms-point">
+                        <h3>8. Shipping and Delivery</h3>
+                        <p>Shipping costs and estimated delivery times are provided during checkout and in order confirmations. These are estimates only and not guaranteed. VeinSprout is not responsible for delays caused by shipping carriers, customs, weather, or other events beyond our control. Risk of loss passes to you upon delivery to the carrier.</p>
+                        <p>For live plant materials, we carefully package items to survive transit but cannot guarantee survival after delivery. Please inspect shipments immediately upon arrival and notify us within 5 business days of any transit damage or missing items. Claims filed after this period may not be honored. Some items may require special handling or shipping methods at additional cost.</p>
+                    </div>
+                </div>
+
+                <div class="terms-section">
+                    <h2>Returns and Refunds</h2>
+                    <div class="terms-point">
+                        <h3>9. Return Policy</h3>
+                        <p>Most unopened items in original condition may be returned within 30 days of delivery for a refund or exchange. Certain items are not returnable, including perishable goods (such as seeds or live plants), digital products, and items marked as final sale. Original shipping charges are non-refundable.</p>
+                        <p>To initiate a return, please contact our customer service team for a Return Merchandise Authorization (RMA) number. Returns without an RMA may be refused. Items must be returned in original packaging with all accessories and documentation. Refunds will be issued to the original payment method within 10 business days after we receive and inspect the returned item.</p>
+                    </div>
+                    <div class="terms-point">
+                        <h3>10. Damaged or Defective Items</h3>
+                        <p>If you receive a damaged or defective item, please contact us within 5 business days of delivery. We may require photographic evidence of the damage or defect. For qualified claims, we will replace the item at no additional cost or provide a full refund, including original shipping charges.</p>
+                        <p>For educational institutions with bulk orders, we will work directly with your designated contact to resolve any issues with damaged or defective items. Special provisions may apply for classroom sets and institutional purchases under separate agreement. Our liability for defective products is limited to the remedies described in these Terms.</p>
+                    </div>
+                    <div class="terms-point">
+                        <h3>11. Warranty Information</h3>
+                        <p>VeinSprout products are covered by a limited warranty against defects in materials and workmanship for 90 days from date of purchase. This warranty does not cover damage caused by misuse, improper care, accidents, modifications, or normal wear and tear. Warranty claims must be made during the warranty period.</p>
+                        <p>This warranty is in lieu of all other warranties, express or implied, including any implied warranties of merchantability or fitness for a particular purpose. Some states do not allow limitations on how long an implied warranty lasts, so the above limitation may not apply to you. This warranty gives you specific legal rights, and you may also have other rights which vary by jurisdiction.</p>
+                    </div>
+                </div>
+
+                <div class="terms-section">
+                    <h2>Intellectual Property</h2>
+                    <div class="terms-point">
+                        <h3>12. Ownership of Content</h3>
+                        <p>All content included on our website and in our Services, such as text, graphics, logos, button icons, images, audio clips, digital downloads, data compilations, and software, is the property of VeinSprout or its content suppliers and protected by United States and international copyright laws.</p>
+                        <p>The compilation of all content on our website is the exclusive property of VeinSprout and protected by U.S. and international copyright laws. All software used on our website is the property of VeinSprout or its software suppliers and protected by United States and international copyright laws. You may not modify, reproduce, distribute, or commercially exploit any content without express written permission.</p>
+                    </div>
+                    <div class="terms-point">
+                        <h3>13. Trademarks</h3>
+                        <p>VeinSprout's trademarks and trade dress may not be used in connection with any product or service that is not VeinSprout's, in any manner that is likely to cause confusion among customers, or in any manner that disparages or discredits VeinSprout. All other trademarks not owned by VeinSprout that appear on our website are the property of their respective owners.</p>
+                        <p>Nothing in these Terms grants you any right or license to use any VeinSprout trademark, service mark, logo, or trade name without our prior written permission. Any unauthorized use terminates the permission or license granted by VeinSprout. You agree not to display or use our trademarks in any manner without our prior written permission.</p>
+                    </div>
+                    <div class="terms-point">
+                        <h3>14. License to Use Materials</h3>
+                        <p>Subject to your compliance with these Terms, VeinSprout grants you a limited, non-exclusive, non-transferable, non-sublicensable license to access and use our educational materials for your personal, non-commercial educational purposes. This license does not include any resale or commercial use of our Services or content.</p>
+                        <p>For school and institutional purchases, additional license terms may apply to curriculum materials and teacher resources. These materials may be used only for educational purposes within the purchasing institution and may not be redistributed, sold, or shared outside the institution without express written permission from VeinSprout.</p>
+                    </div>
+                    <div class="terms-point">
+                        <h3>15. User-Generated Content</h3>
+                        <p>If you submit, upload, or post any content to our website or Services ("User Content"), you grant VeinSprout a worldwide, non-exclusive, royalty-free, perpetual, irrevocable, and fully sublicensable right to use, reproduce, modify, adapt, publish, translate, create derivative works from, distribute, and display such User Content.</p>
+                        <p>You represent and warrant that you own or otherwise control all rights to the User Content you submit; that the User Content is accurate; that use of the User Content does not violate these Terms; and that the User Content will not cause injury to any person or entity. VeinSprout takes no responsibility and assumes no liability for any User Content posted by you or any third party.</p>
+                    </div>
+                </div>
+
+                <div class="terms-section">
+                    <h2>Prohibited Conduct</h2>
+                    <div class="terms-point">
+                        <h3>16. Acceptable Use</h3>
+                        <p>You agree not to use our Services to: (a) violate any local, state, national, or international law or regulation; (b) infringe the rights of any third party, including intellectual property, privacy, or contractual rights; (c) interfere with or disrupt our Services or servers or networks connected to our Services; or (d) attempt to gain unauthorized access to any portion of our Services.</p>
+                        <p>Additional prohibited activities include: using our products to create hazardous situations; reverse engineering or attempting to extract source code from our software; using automated systems to access our Services in a manner that sends more request messages than a human could reasonably produce; or engaging in any activity that restricts or inhibits any other user from using or enjoying our Services.</p>
+                    </div>
+                    <div class="terms-point">
+                        <h3>17. Safety Guidelines</h3>
+                        <p>Our products are designed for educational and recreational gardening purposes only. You agree to follow all safety instructions provided with our products and to use them only as intended. Some products may contain small parts not suitable for children under 3 years old. Adult supervision is recommended for all activities involving children.</p>
+                        <p>You assume all risks associated with the use of our products, including but not limited to risks associated with plant materials, gardening tools, and chemical substances that may be used in connection with our kits. VeinSprout is not responsible for any allergic reactions, injuries, or damages resulting from improper use of our products or failure to follow instructions.</p>
+                    </div>
+                </div>
+
+                <div class="terms-section">
+                    <h2>Termination</h2>
+                    <div class="terms-point">
+                        <h3>18. Termination by VeinSprout</h3>
+                        <p>VeinSprout may terminate or suspend your account and bar access to the Services immediately, without prior notice or liability, under our sole discretion, for any reason whatsoever and without limitation, including but not limited to a breach of these Terms. All provisions of these Terms which by their nature should survive termination shall survive termination.</p>
+                        <p>If you wish to terminate your account, you may simply discontinue using our Services. For institutional accounts, written notice may be required. VeinSprout reserves the right to terminate free accounts that have been inactive for an extended period of time. Upon termination, your right to use the Services will immediately cease.</p>
+                    </div>
+                    <div class="terms-point">
+                        <h3>19. Effect of Termination</h3>
+                        <p>Upon termination, all licenses and other rights granted to you under these Terms will immediately cease. Any outstanding balance owed to VeinSprout will become immediately due and payable. We are not liable to you or any third party for any termination of your access to the Services.</p>
+                        <p>Termination does not relieve you of obligations incurred prior to the termination date, including payment obligations. Any provisions of these Terms that, by their nature, should survive termination (including but not limited to ownership provisions, warranty disclaimers, indemnity, and limitations of liability) shall survive any termination of these Terms.</p>
+                    </div>
+                </div>
+
+                <div class="terms-section">
+                    <h2>Disclaimers and Limitations</h2>
+                    <div class="terms-point">
+                        <h3>20. Service Availability</h3>
+                        <p>VeinSprout makes no representations or warranties about the reliability, availability, timeliness, or accuracy of the Services. The Services are provided "as is" and "as available" without warranty of any kind. We do not warrant that the Services will be uninterrupted or error-free, that defects will be corrected, or that the Services are free of viruses or other harmful components.</p>
+                        <p>From time to time, we may issue updates to our website or Services which may add, modify, or remove features. We do not guarantee that any specific features or functionality will always be available. We reserve the right to modify, suspend, or discontinue any part of our Services at any time without notice. We will not be liable if for any reason all or any part of our Services is unavailable at any time or for any period.</p>
+                    </div>
+                    <div class="terms-point">
+                        <h3>21. Product Results</h3>
+                        <p>VeinSprout provides educational products designed to demonstrate plant growth principles, but we do not guarantee specific results. Plant growth depends on many factors beyond our control, including environmental conditions, care practices, and genetic variation. Descriptions of potential results are for illustrative purposes only and not guarantees.</p>
+                        <p>You acknowledge that gardening involves inherent risks and uncertainties. VeinSprout shall not be liable for any failure of plants to grow, thrive, or produce expected results. Our liability for any defective products is limited to the remedies described in our Return Policy and Warranty sections. Some jurisdictions do not allow the exclusion of implied warranties, so the above exclusion may not apply to you.</p>
+                    </div>
+                    <div class="terms-point">
+                        <h3>22. Limitation of Liability</h3>
+                        <p>To the maximum extent permitted by applicable law, in no event shall VeinSprout, its affiliates, officers, directors, employees, agents, suppliers, or licensors be liable for any indirect, punitive, incidental, special, consequential, or exemplary damages, including without limitation damages for loss of profits, goodwill, use, data, or other intangible losses, arising out of or relating to the use of, or inability to use, the Services.</p>
+                        <p>To the maximum extent permitted by applicable law, VeinSprout assumes no liability or responsibility for any (i) errors, mistakes, or inaccuracies of content; (ii) personal injury or property damage resulting from your access to or use of our Services; (iii) any unauthorized access to or use of our secure servers; or (iv) any interruption or cessation of transmission to or from our Services.</p>
+                    </div>
+                    <div class="terms-point">
+                        <h3>23. Indemnification</h3>
+                        <p>You agree to defend, indemnify, and hold harmless VeinSprout and its subsidiaries, agents, licensors, managers, and other affiliated companies, and their employees, contractors, agents, officers, and directors, from and against any and all claims, damages, obligations, losses, liabilities, costs or debt, and expenses arising from your use of and access to the Services.</p>
+                        <p>This indemnification obligation includes but is not limited to: (i) your violation of these Terms; (ii) your use of any content obtained through the Services; (iii) your violation of any third-party right, including without limitation any right of privacy or intellectual property rights; and (iv) any claim that your User Content caused damage to a third party. This defense and indemnification obligation will survive these Terms and your use of the Services.</p>
+                    </div>
+                </div>
+
+                <div class="terms-section">
+                    <h2>Dispute Resolution</h2>
+                    <div class="terms-point">
+                        <h3>24. Governing Law</h3>
+                        <p>These Terms shall be governed and construed in accordance with the laws of the State of New York, United States, without regard to its conflict of law provisions. The United Nations Convention on Contracts for the International Sale of Goods shall not apply to these Terms. Any disputes arising under these Terms shall be resolved in the state or federal courts located in New York County, New York.</p>
+                        <p>Our failure to enforce any right or provision of these Terms will not be considered a waiver of those rights. If any provision of these Terms is held to be invalid or unenforceable by a court, the remaining provisions of these Terms will remain in effect. These Terms constitute the entire agreement between us regarding our Services, and supersede and replace any prior agreements we might have between us regarding the Services.</p>
+                    </div>
+                    <div class="terms-point">
+                        <h3>25. Arbitration</h3>
+                        <p>Any dispute, claim, or controversy arising out of or relating to these Terms or the breach, termination, enforcement, interpretation, or validity thereof, including the determination of the scope or applicability of this agreement to arbitrate, shall be determined by arbitration in New York, New York before one arbitrator.</p>
+                        <p>The arbitration shall be administered by JAMS pursuant to its Comprehensive Arbitration Rules and Procedures. Judgment on the award may be entered in any court having jurisdiction. This clause shall not preclude parties from seeking provisional remedies in aid of arbitration from a court of appropriate jurisdiction. The arbitrator may award declaratory or injunctive relief only in favor of the individual party seeking relief.</p>
+                    </div>
+                    <div class="terms-point">
+                        <h3>26. Class Action Waiver</h3>
+                        <p>You agree that any arbitration or proceeding shall be limited to the dispute between us and you individually. To the full extent permitted by law, (i) no arbitration or proceeding shall be joined with any other; (ii) there is no right or authority for any dispute to be arbitrated or resolved on a class-action basis or to utilize class action procedures; and (iii) there is no right or authority for any dispute to be brought in a purported representative capacity on behalf of the general public or any other persons.</p>
+                        <p>If this specific provision is found to be unenforceable, then the entirety of this arbitration section will be null and void and neither of us will be entitled to arbitrate our dispute. You agree that you may bring claims against us only in your individual capacity and not as a plaintiff or class member in any purported class or representative proceeding.</p>
+                    </div>
+                </div>
+
+                <div class="terms-section">
+                    <h2>Educational Institutions</h2>
+                    <div class="terms-point">
+                        <h3>27. Institutional Purchases</h3>
+                        <p>Educational institutions purchasing VeinSprout products agree to these Terms on behalf of their organization and all users accessing the Services through their account. The institution is responsible for ensuring all users comply with these Terms. Additional terms may apply to volume purchases, curriculum licenses, and professional development services.</p>
+                        <p>Institutions may be required to provide proof of their educational status to qualify for educational pricing or certain services. VeinSprout reserves the right to verify educational status and revoke discounts or services if fraudulent claims are suspected. Institutional accounts may have additional administrative controls and reporting features not available to individual users.</p>
+                    </div>
+                    <div class="terms-point">
+                        <h3>28. Student Data Privacy</h3>
+                        <p>For institutions subject to student data privacy laws (such as FERPA in the U.S.), VeinSprout agrees to act as a "School Official" with legitimate educational interests in student data only as needed to provide the contracted services. We will not use student data for any commercial purpose other than providing the Services to the educational institution.</p>
+                        <p>Educational institutions are responsible for obtaining any necessary parental consents required under applicable law before providing student data to VeinSprout. Upon request from the educational institution, we will delete or return student data as required by law. VeinSprout implements appropriate technical and organizational measures to protect student data in accordance with industry standards.</p>
+                    </div>
+                </div>
+
+                <div class="terms-section">
+                    <h2>General Provisions</h2>
+                    <div class="terms-point">
+                        <h3>29. Force Majeure</h3>
+                        <p>VeinSprout shall not be liable for any failure to perform its obligations hereunder where such failure results from any cause beyond VeinSprout's reasonable control, including, without limitation, mechanical, electronic, or communications failure or degradation, acts of God, weather events, natural disasters, labor disputes, governmental actions, pandemics, or shortages of materials.</p>
+                        <p>If a force majeure event occurs that affects our ability to fulfill orders or provide Services, we will make reasonable efforts to notify affected customers and resume normal operations as quickly as possible. During such events, delivery estimates may be extended, and some Services may be temporarily unavailable without liability to VeinSprout.</p>
+                    </div>
+                    <div class="terms-point">
+                        <h3>30. Assignment</h3>
+                        <p>These Terms, and any rights and licenses granted hereunder, may not be transferred or assigned by you, but may be assigned by VeinSprout without restriction. Any attempted transfer or assignment in violation hereof shall be null and void. These Terms will be binding upon and inure to the benefit of the parties hereto and their permitted successors and assigns.</p>
+                        <p>In the event that VeinSprout is acquired by or merged with a third party entity, we reserve the right to transfer or assign the information we have collected from you as part of such merger, acquisition, sale, or other change of control. In such circumstances, VeinSprout will endeavor to maintain the integrity of your personal information and provide notice before it becomes subject to a different privacy policy.</p>
+                    </div>
+                    <div class="terms-point">
+                        <h3>31. Severability</h3>
+                        <p>If any provision of these Terms is found to be unenforceable or invalid under any applicable law, such unenforceability or invalidity shall not render these Terms unenforceable or invalid as a whole, and such provisions shall be deleted without affecting the remaining provisions herein. The remaining provisions of these Terms will continue to be valid and enforceable.</p>
+                        <p>If any court or competent authority finds that any provision of these Terms (or part of any provision) is invalid, illegal, or unenforceable, that provision or part-provision shall, to the extent required, be deemed to be deleted, and the validity and enforceability of the other provisions of these Terms shall not be affected. The parties shall negotiate in good faith to modify these Terms so as to effect the original intent as closely as possible.</p>
+                    </div>
+                    <div class="terms-point">
+                        <h3>32. Entire Agreement</h3>
+                        <p>These Terms, together with our Privacy Policy and any other legal notices published by VeinSprout on the Services, shall constitute the entire agreement between you and VeinSprout concerning the Services. If any provision of these Terms is deemed invalid by a court of competent jurisdiction, the invalidity of such provision shall not affect the validity of the remaining provisions.</p>
+                        <p>These Terms supersede all prior or contemporaneous communications and proposals, whether electronic, oral, or written, between you and VeinSprout with respect to the Services. No waiver of any provision of these Terms shall be deemed a further or continuing waiver of such provision or any other provision, and VeinSprout's failure to assert any right or provision under these Terms shall not constitute a waiver of such right or provision.</p>
+                    </div>
+                    <div class="terms-point">
+                        <h3>33. Notices</h3>
+                        <p>VeinSprout may provide you with notices, including those regarding changes to these Terms, by email, regular mail, or postings on our website. Notice will be deemed given twenty-four hours after email is sent, unless VeinSprout is notified that the email address is invalid. Alternatively, we may give you legal notice by mail to the address provided during registration.</p>
+                        <p>Notices to VeinSprout should be sent to: VeinSprout Legal Department, 25 Union Square W, New York, NY 10003, USA, with a copy via email to legal@veinsprout.com. Notices will be deemed given when received. For service of process or other legal documents, please follow the procedures required by applicable law in addition to providing notice under this section.</p>
+                    </div>
+                </div>
+
+                <div class="terms-section">
+                    <h2>Special Provisions</h2>
+                    <div class="terms-point">
+                        <h3>34. International Users</h3>
+                        <p>The Services are controlled and operated from the United States. VeinSprout makes no representation that materials on the Services are appropriate or available for use in other locations. Those who choose to access the Services from other locations do so on their own initiative and are responsible for compliance with local laws, if and to the extent local laws are applicable.</p>
+                        <p>International orders may be subject to additional fees including customs duties, taxes, and import fees which are the responsibility of the recipient. VeinSprout cannot guarantee delivery times for international shipments. Some products may not be available for international delivery due to agricultural restrictions or other regulations. It is your responsibility to ensure that any products ordered comply with your country's import regulations.</p>
+                    </div>
+                    <div class="terms-point">
+                        <h3>35. California Residents</h3>
+                        <p>Under California Civil Code Section 1789.3, California users of our Services are entitled to the following specific consumer rights notice: The Complaint Assistance Unit of the Division of Consumer Services of the California Department of Consumer Affairs may be contacted in writing at 1625 North Market Blvd., Sacramento, CA 95834, or by telephone at (800) 952-5210.</p>
+                        <p>California residents may have additional rights under the California Consumer Privacy Act (CCPA), as described in our Privacy Policy. California residents may request a list of all third parties to whom we have disclosed certain personal information during the preceding year for direct marketing purposes and the categories of personal information disclosed.</p>
+                    </div>
+                    <div class="terms-point">
+                        <h3>36. European Union Users</h3>
+                        <p>If you are located in the European Union, you may have additional rights under the General Data Protection Regulation (GDPR), as described in our Privacy Policy. Nothing in these Terms is intended to limit any rights you may have under GDPR or other applicable data protection laws.</p>
+                        <p>EU users have the right to lodge a complaint with a supervisory authority if they believe their rights under GDPR have been violated. Our representative in the EU can be contacted at eu-representative@veinsprout.com. For transfers of personal data outside the EU, we implement appropriate safeguards as required by GDPR.</p>
+                    </div>
+                    <div class="terms-point">
+                        <h3>37. Export Restrictions</h3>
+                        <p>You agree not to export, re-export, or transfer, directly or indirectly, any U.S. technical data acquired from VeinSprout, or any products utilizing such data, in violation of the United States export laws or regulations. Our products may be subject to export controls under U.S. laws and the laws of the jurisdiction where the products are delivered or used.</p>
+                        <p>By purchasing our products, you certify that you are not located in, under the control of, or a national or resident of any country to which the United States has embargoed goods, or any person or entity on the U.S. Treasury Department's list of Specially Designated Nationals or the U.S. Commerce Department's Denied Persons List or Entity List.</p>
+                    </div>
+                </div>
+
+                <div class="terms-section">
+                    <h2>Contact Information</h2>
+                    <div class="terms-point">
+                        <h3>38. Customer Support</h3>
+                        <p>For general inquiries, product support, or assistance with your account, please contact our customer service team at support@veinsprout.com or call (212) 555-0198 during our business hours (Monday-Friday, 9am-6pm EST). For educational institutions, please contact education@veinsprout.com for specialized support.</p>
+                        <p>We strive to respond to all customer service inquiries within 24-48 hours during business days. For technical support with our digital products or website, please include detailed information about your issue, including any error messages, the device and browser you're using, and steps to reproduce the problem.</p>
+                    </div>
+                    <div class="terms-point">
+                        <h3>39. Legal Inquiries</h3>
+                        <p>For any legal notices or inquiries regarding these Terms, please contact our Legal Department at:</p>
+                        <p>VeinSprout Legal Department<br>
+                        25 Union Square W<br>
+                        New York, NY 10003, USA<br>
+                        Email: legal@veinsprout.com<br>
+                        Phone: (212) 555-0198 ext. 2</p>
+                        <p>Please include "Legal Inquiry" in the subject line of any email correspondence. For service of legal process, please follow all applicable legal requirements in addition to sending notice to the above address.</p>
+                    </div>
+                    <div class="terms-point">
+                        <h3>40. Effective Date</h3>
+                        <p>These Terms of Service are effective as of June 28, 2023, and replace any prior terms applicable to your use of the Services. We reserve the right to change these Terms at any time by posting revised terms on our website. Your continued use of the Services after such changes constitutes your acceptance of the new Terms.</p>
+                        <p>It is your responsibility to periodically review these Terms for updates. Material changes to these Terms will be communicated to registered users via email or through a notice on our website. The date at the top of these Terms indicates when they were last revised. Your use of the Services following any revision constitutes your agreement to the revised Terms.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <h3>VeinSprout</h3>
+                        <p>Tiny veins, mighty beginnings.</p>
+                    </div>
+                    <p>Innovative gardening solutions that connect people with the fascinating world of plant growth from the roots up.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="index.html#products">Products</a></li>
+                        <li><a href="index.html#testimonials">Testimonials</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Products</h4>
+                    <ul>
+                        <li><a href="index.html#products">Seedling Starter Kits</a></li>
+                        <li><a href="index.html#products">Root Viewers</a></li>
+                        <li><a href="index.html#products">Classroom Packages</a></li>
+                        <li><a href="index.html#products">Gardening Tools</a></li>
+                        <li><a href="index.html#products">Educational Materials</a></li>
+                        <li><a href="index.html#products">Gift Cards</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> 25 Union Square W, New York, NY 10003, USA</p>
+                    <p><i class="fas fa-phone"></i> (212) 555-0198</p>
+                    <p><i class="fas fa-envelope"></i> info@veinsprout.com</p>
+                    <p><i class="fas fa-clock"></i> Mon-Fri: 9am-6pm EST</p>
+                    <p><i class="fas fa-phone-volume"></i> Toll Free: 1-800-VEINSPR (834-6777)</p>
+                </div>
+                <div class="footer-social">
+                    <h4>Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                    <h4 style="margin-top: 20px;">Newsletter</h4>
+                    <p>Subscribe for gardening tips and exclusive offers.</p>
+                    <form>
+                        <input type="email" placeholder="Your Email" style="padding: 10px; width: 100%; margin-top: 10px; border-radius: 5px; border: none;">
+                        <button type="submit" style="margin-top: 10px; padding: 10px 15px; background-color: var(--secondary-color); color: white; border: none; border-radius: 5px; cursor: pointer;">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 VeinSprout. All Rights Reserved. | <a href="privacy.html" style="color: var(--secondary-color);">Privacy Policy</a> | <a href="terms.html" style="color: var(--secondary-color);">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.querySelector('.mobile-menu');
+            const navMenu = document.querySelector('nav ul');
+            
+            mobileMenuBtn.addEventListener('click', () => {
+                navMenu.classList.toggle('show');
+            });
+        });
+    </script>
+</body>
+</html>
